@@ -44,7 +44,7 @@ A testbench is written to verify the correctness of the module, the basic test a
 
 the test result are show as below:
 
-![image](https://github.com/user-attachments/assets/51de0e28-eb1e-44f2-b385-2ae46020f082)
+![chi_module](https://github.com/user-attachments/assets/c48d2230-307c-467a-96f4-9e2e09270b65)
 
 
 ```
@@ -105,6 +105,36 @@ A testbench is written to verify the correctness of the module, the basic test a
 
 the test result are show as below:(The testbench has been provided)
 
-![image](https://github.com/user-attachments/assets/51de0e28-eb1e-44f2-b385-2ae46020f082)
+![theta_module](https://github.com/user-attachments/assets/8bea43a3-e0c4-4111-a28f-ee8be1fcf61d)
 
 There is no failure report for valid and done signal, so their functionality are also correct.
+
+### RhoPi Module:
+![RhoPi](https://github.com/user-attachments/assets/2eeda3a6-5952-4ee6-99d3-8ba068e86f37)
+
+```
+// calculate groundtruth outputs(direct translation of C code)
+    var st = state.clone
+    var bc = Array.fill(5)(BigInt(0))
+    var tmp = st(1)
+    var j = 0
+    for(i <-0 until 24)
+    {
+      j = piln(i)
+      bc(0) = st(j)
+      st(j) = ROTL64(tmp,rotc(i))
+      tmp = bc(0)
+    }
+    val out_state = st
+    // peekpoke testing
+    for(i <- 0 until 25)
+    {
+      c.io.state_i(i).poke(state(i))
+    }
+    c.clock.step(1)
+    for(j <-0 until 25)
+    {
+      c.io.state_o(j).expect(out_state(j))
+    }
+```
+
