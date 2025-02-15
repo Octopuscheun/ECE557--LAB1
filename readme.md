@@ -112,13 +112,16 @@ Handles data flow between input, processing, and output stages.
 ### Design Validation:
 
 A testbench is written to verify the correctness of the module. However, it actually asserts the result without involving the Final part of C version. Hence, Here we make a little modification to the hash array:
-![alt text](image-2.png)
+
+![image-2](https://github.com/user-attachments/assets/f9369b7c-6b23-40d9-ba04-ec3c674250dc)
 
 the test result are show as below:(The testbench has been modified)
 
-![alt text](image-1.png)
+![image-1](https://github.com/user-attachments/assets/0d084093-7eb9-4b56-bb60-f33338473f8a)
 
 There is no failure report for valid and done signal, so their functionality are also correct.
 
 The waveform is shown as below. The st is the matrix state, which provides the finsh hash result for output port:
+![top_level_Wave](https://github.com/user-attachments/assets/998180e4-8e7b-4d5f-86a8-ef3909374e79)
+
 
