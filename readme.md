@@ -18,7 +18,9 @@ before starting to verify the functionality, the testbench's hash array should b
 This part implements ctrl, dpath and top modules for the SHA-3 hashing algorithm:
 
 ctrl module: A finite state machine to implement the reading data, excution, and output process.
+
 dpath module: A data path manipulating for data xor, theta, RhoPi, Chi, Iota process.
+
 top module: A top level to connect the stimulation with ctrl and dpath module.
 
 ### Control Module (CtrlModule):
