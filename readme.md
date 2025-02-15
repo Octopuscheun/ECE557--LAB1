@@ -99,7 +99,7 @@ Outputs: Provides the final hash output after two rounds of Keccak.
 **Port Name**|**Input/output**|**Description**
 | ---------- | -------------- | --------------- | 
 |message|Input|DecoupledIO interface for input message|
-|hash|OutputDecoupledIO interface for output hash|
+|hash|Output|DecoupledIO interface for output hash|
 
 this module integrates the control and data path modules and provides the interface for external communication:
 
